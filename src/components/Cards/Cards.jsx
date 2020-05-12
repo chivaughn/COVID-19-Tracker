@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 import cx from "classnames";
 
 const Cards = ({ data: { cases, deaths, recovered } }) => {
-  if (!cases) {
+  if (!cases || null) {
     return "Loading";
   }
   return (
