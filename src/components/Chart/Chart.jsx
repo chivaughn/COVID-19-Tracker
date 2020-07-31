@@ -23,7 +23,6 @@ const Chart = ({ country }) => {
   const cases_values = Object.values(dailyData.cases);
   const deaths_values = Object.values(dailyData.deaths);
   const recovered_values = Object.values(dailyData.recovered);
-  // const active_values = Object.values(dailyData.active);
 
   const lineChart =
     cases_dates.length !== 0 ? (
@@ -51,13 +50,6 @@ const Chart = ({ country }) => {
               backgroundColor: "rgba(0, 255, 0, 0.5)",
               fill: false,
             },
-            // {
-            //   data: recovered_values,
-            //   label: "Active",
-            //   borderColor: "yellow",
-            //   backgroundColor: "rgba(0, 255, 0, 0.5)",
-            //   fill: false,
-            // },
           ],
         }}
       />
