@@ -4,7 +4,7 @@ import styles from "./Cards.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 
-const Cards = ({ data: { cases, deaths, recovered } }) => {
+const Cards = ({ data: { cases, deaths, recovered, active } }) => {
   if (!cases || null) {
     return "Loading";
   }
@@ -15,7 +15,7 @@ const Cards = ({ data: { cases, deaths, recovered } }) => {
           item
           component={Card}
           xs={12}
-          md={3}
+          md={2}
           className={cx(styles.card, styles.cases)}
         >
           <CardContent>
@@ -37,7 +37,7 @@ const Cards = ({ data: { cases, deaths, recovered } }) => {
           item
           component={Card}
           xs={12}
-          md={3}
+          md={2}
           className={cx(styles.card, styles.recovered)}
         >
           <CardContent>
@@ -59,7 +59,7 @@ const Cards = ({ data: { cases, deaths, recovered } }) => {
           item
           component={Card}
           xs={12}
-          md={3}
+          md={2}
           className={cx(styles.card, styles.deaths)}
         >
           <CardContent>
@@ -74,6 +74,29 @@ const Cards = ({ data: { cases, deaths, recovered } }) => {
             </Typography>
             <Typography variant="body2">
               Number of deaths of Covid-19
+            </Typography>
+          </CardContent>
+        </Grid>
+
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={2}
+          className={cx(styles.card, styles.active)}
+        >
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+              Active
+            </Typography>
+            <Typography variant="h5">
+              <CountUp start={0} end={active} duration={2} separator="," />
+            </Typography>
+            <Typography color="textSecondary">
+              {new Date().toDateString()}
+            </Typography>
+            <Typography variant="body2">
+              Number of Active cases of Covid-19
             </Typography>
           </CardContent>
         </Grid>

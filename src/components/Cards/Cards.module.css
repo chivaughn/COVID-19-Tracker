@@ -21,6 +21,10 @@
   border-left: 10px solid rgb(255, 0, 0, 0.5);
 }
 
+.active {
+  border-left: 10px solid rgb(255, 217, 50);
+}
+
 @media only screen and (max-width: 770px) {
   .card {
     margin: 2% 0 !important;
