@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://corona.lmao.ninja/v2";
+const url = "https://disease.sh/v3/covid-19";
 
 export const fetchData = async (country) => {
   let changeableURL = url;
@@ -35,6 +35,7 @@ export const fetchDailyData = async (country) => {
   } else {
     dailyURL = `${url}/historical/all?lastdays=150`;
     const { data } = await axios.get(`${dailyURL}`);
+    console.log(data);
     return data;
   }
   try {
